@@ -4,14 +4,20 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/links",
+      "has": [
+        { "type": "host", "value": "links.professoralaishelena.com" }
+      ]
+    }
+  ],
   "headers": [
     {
       "source": "/fotos/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {

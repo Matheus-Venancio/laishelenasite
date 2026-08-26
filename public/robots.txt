@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.laishelena2098.com.br/sitemap.xml
+Sitemap: https://www.professoralaishelena.com/sitemap.xml

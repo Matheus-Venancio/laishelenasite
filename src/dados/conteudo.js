@@ -14,11 +14,11 @@ export const config = {
   estado: 'São Paulo',
   uf: 'SP',
   slogan: 'Firme para defender, preparada para fazer.',
-  site: 'https://www.laishelena2098.com.br',
+  site: 'https://www.professoralaishelena.com',
 
   // PREENCHER — contatos oficiais da campanha
   whatsapp: '5519999999999',
-  email: 'contato@laishelena2098.com.br',
+  email: 'contato@professoralaishelena.com',
   instagram: 'https://www.instagram.com/',
   facebook: 'https://www.facebook.com/',
   youtube: 'https://www.youtube.com/',
