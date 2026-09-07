@@ -10,6 +10,8 @@ import Brasilia from './componentes/Brasilia'
 import Regiao from './componentes/Regiao'
 import Livro from './componentes/Livro'
 import Galeria from './componentes/Galeria'
+import Moldura from './componentes/Moldura'
+import MolduraPage from './componentes/MolduraPage'
 import PedidoDeVoto from './componentes/PedidoDeVoto'
 import ComoVotar from './componentes/ComoVotar'
 import Participe from './componentes/Participe'
@@ -19,6 +21,10 @@ import BarraFixa from './componentes/BarraFixa'
 export default function App() {
   // revela as seções conforme o visitante rola a página
   useRevelar()
+
+  // roteamento simples por caminho: /moldura tem página própria
+  const rota = window.location.pathname.replace(/\/+$/, '').toLowerCase()
+  if (rota === '/moldura') return <MolduraPage />
 
   return (
     <>
@@ -40,6 +46,7 @@ export default function App() {
         <Livro />
         <Galeria />
         <PedidoDeVoto />
+        <Moldura />
         <ComoVotar />
         <Participe />
       </main>

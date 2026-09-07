@@ -52,6 +52,7 @@ export const navegacao = [
   { href: '#brasilia', rotulo: 'Em Brasília' },
   { href: '#regiao', rotulo: 'A região' },
   { href: '#livro', rotulo: 'O livro' },
+  { href: '#moldura', rotulo: 'Moldura' },
   { href: '#participe', rotulo: 'Participe' },
 ]
 

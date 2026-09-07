@@ -1,0 +1,55 @@
+MOLDURAS DA CAMPANHA — LAÍS HELENA 2098
+========================================
+
+ESTADO ATUAL: as artes oficiais JÁ ESTÃO INSTALADAS aqui.
+O site NÃO desenha a moldura por código — ele usa estes PNGs exatamente
+como estão. A Laís e a logo já vêm dentro da arte.
+
+  estoucom-post.png    1080 x 1080   modelo "ESTOU COM A LAÍS"  (quadrado)
+  estoucom-story.png   1080 x 1920   modelo "ESTOU COM A LAÍS"  (story)
+  euvoto-post.png      1080 x 1080   modelo "EU VOTO"           (quadrado)
+  euvoto-story.png     1080 x 1920   modelo "EU VOTO"           (story)
+  classico-post.png    1080 x 1080   modelo "CLÁSSICO"          (quadrado)
+  classico-story.png   1080 x 1920   modelo "CLÁSSICO"          (story)
+
+
+COMO TROCAR OU ATUALIZAR UMA ARTE
+----------------------------------
+1. Peça ao designer o PNG quadrado, 1080 x 1080.
+
+2. REGRA MAIS IMPORTANTE: a área onde entra a foto do apoiador precisa
+   estar TRANSPARENTE (alpha 0), NÃO branca.
+   A foto do apoiador aparece ATRÁS da moldura. Se o PNG tiver fundo
+   branco, a foto some.
+     - No Canva: exportar como "PNG com fundo transparente".
+     - No Photoshop: apagar a camada de fundo antes de "Exportar como PNG".
+
+3. Salve a arte nova em C:\Users\mathe\Downloads e ajuste o nome dela no
+   dicionário ARTES dentro de ferramentas/preparar-molduras.py.
+
+4. Rode:  python ferramentas/preparar-molduras.py
+   O script confere a transparência, salva a versão post e gera a story
+   sozinho. Se a arte vier com fundo branco, ele avisa e para.
+
+5. Commit + push. A Vercel publica sozinha. Não precisa mexer em código.
+
+
+COMO ADICIONAR UM MODELO NOVO
+------------------------------
+1. Coloque a arte nova e registre o nome do modelo em
+   ferramentas/preparar-molduras.py (dicionário ARTES).
+2. Rode o script.
+3. Adicione uma linha na lista MODELOS em
+   src/componentes/GeradorMoldura.jsx:
+       { chave: 'nomedomodelo', rotulo: 'TEXTO DO BOTÃO' }
+   Nada mais precisa mudar — a lógica é a mesma para todos.
+
+
+OBSERVAÇÕES
+-----------
+- As versões "story" são a arte quadrada encaixada na base de uma tela
+  1080x1920, com o espaço de cima livre para a foto. Se o designer fizer
+  uma arte de story nativa, é só substituir o arquivo.
+
+- Se algum PNG falhar ao carregar, o site desenha uma faixa de emergência
+  por código, para o material nunca sair sem identificação da campanha.
