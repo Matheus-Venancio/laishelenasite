@@ -22,8 +22,14 @@ export default function App() {
   // revela as seções conforme o visitante rola a página
   useRevelar()
 
-  // roteamento simples por caminho: /moldura tem página própria
-  const rota = window.location.pathname.replace(/\/+$/, '').toLowerCase()
+  // Roteamento simples por caminho: /moldura tem página própria.
+  // Aceita /moldura, /moldura/ e /moldura.html — o cleanUrls da Vercel
+  // redireciona a versão com extensão, mas a checagem tolerante evita
+  // qualquer janela em que a página caia na home por engano.
+  const rota = window.location.pathname
+    .toLowerCase()
+    .replace(/\.html$/, '')
+    .replace(/\/+$/, '')
   if (rota === '/moldura') return <MolduraPage />
 
   return (

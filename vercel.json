@@ -14,10 +14,6 @@
           "value": "links.professoralaishelena.com"
         }
       ]
-    },
-    {
-      "source": "/moldura",
-      "destination": "/index.html"
     }
   ],
   "headers": [
